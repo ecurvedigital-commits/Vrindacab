@@ -4120,30 +4120,32 @@
     /* MOBILE NAVIGATION DRAWER & TOGGLE STYLES */
     .mobile-menu-toggle {
       display: none;
-      width: 40px;
-      height: 40px;
-      padding: 9px 8px;
-      background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      border-radius: var(--radius-sm);
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
       cursor: pointer;
       flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 4.5px;
       transition: all 0.2s ease;
       flex-shrink: 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .mobile-menu-toggle:hover {
-      background: #e2e8f0;
+      background: #f8fafc;
       border-color: #94a3b8;
     }
 
     .hamburger-bar {
       display: block;
-      width: 22px;
-      height: 2.2px;
-      background: var(--primary);
+      width: 18px;
+      height: 2px;
+      background: #0a4d3c;
       border-radius: 2px;
       transition: all 0.25s ease;
     }
@@ -4228,24 +4230,41 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      border: 1px solid #cbd5e1;
+      border: 1.5px solid #cbd5e1;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: #334155;
-      transition: all 0.15s ease;
+      color: #0a4d3c;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      padding: 0;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
     }
 
     .mobile-drawer-close:hover {
       background: #f1f5f9;
-      color: #0f172a;
+      border-color: #0a4d3c;
+      color: #042e23;
     }
 
     .mobile-drawer-close .icon {
       width: 18px;
       height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-drawer-close .icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: block;
     }
 
     .mobile-drawer-body {
@@ -4512,12 +4531,27 @@
 
       .mobile-menu-toggle {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 4.5px;
         width: 36px;
         height: 36px;
+        padding: 0;
         border-radius: 8px;
+        border: 1.5px solid #cbd5e1;
+        background: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         flex-shrink: 0;
+      }
+
+      .mobile-menu-toggle .hamburger-bar {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: #0a4d3c;
+        border-radius: 2px;
+        margin: 0;
       }
 
       /* Hero Section */
@@ -6126,10 +6160,12 @@
         </a>
       </div>
       <button class="mobile-drawer-close" id="mobileDrawerClose" type="button" aria-label="Close Menu">
-        <svg viewBox="0 0 24 24" class="icon">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </span>
       </button>
     </div>
 
