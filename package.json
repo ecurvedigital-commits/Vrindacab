@@ -1,0 +1,9 @@
+{
+  "name": "vrindacab",
+  "version": "1.0.0",
+  "description": "Vrinda Cab - Premium Outstation & Airport Taxi Website",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 ."
+  }
+}
