@@ -3397,6 +3397,17 @@
       .faq-grid {
         max-width: 100%;
       }
+
+      .footer-main-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 20px;
+        margin-bottom: 28px;
+      }
+
+      .footer-trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -3478,31 +3489,31 @@
     .site-footer {
       background: #041812;
       color: #cbd5e1;
-      padding: clamp(48px, 5.5vw, 68px) 0 28px;
+      padding: clamp(36px, 4.5vw, 52px) 0 24px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       position: relative;
     }
 
     .footer-main-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: clamp(24px, 3vw, 44px);
-      margin-bottom: 48px;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: clamp(20px, 2.5vw, 36px);
+      margin-bottom: 36px;
     }
 
     .footer-col {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
     .footer-heading {
-      font-size: 14.5px;
+      font-size: 13.5px;
       font-weight: 800;
       color: #ffffff;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -3511,14 +3522,14 @@
     .footer-heading::after {
       content: '';
       display: block;
-      width: 24px;
+      width: 20px;
       height: 2px;
       background: #10b981;
       border-radius: 2px;
     }
 
     .footer-brand-title {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
       color: #ffffff;
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -3532,31 +3543,30 @@
     }
 
     .footer-bio {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #94a3b8;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     .footer-contact-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-top: 4px;
+      gap: 8px;
+      margin-top: 2px;
     }
 
     .footer-contact-item {
       display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 13px;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
       color: #cbd5e1;
     }
 
     .footer-contact-item .icon {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       color: #34d399;
-      margin-top: 2px;
       flex-shrink: 0;
     }
 
@@ -3577,13 +3587,13 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 8px;
     }
 
     .footer-links-list li a {
       color: #94a3b8;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 12.5px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -3606,27 +3616,39 @@
       font-weight: 700;
       background: rgba(16, 185, 129, 0.2);
       color: #6ee7b7;
-      padding: 2px 6px;
+      padding: 1px 6px;
       border-radius: 4px;
       margin-left: 4px;
+    }
+
+    .footer-badge-mini {
+      font-size: 9px;
+      font-weight: 700;
+      background: #059669;
+      color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin-left: 4px;
+      vertical-align: middle;
+      letter-spacing: 0.3px;
     }
 
     /* Payment & Dispatch Assurance Block */
     .footer-assurance-box {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-top: 10px;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 6px;
     }
 
     .footer-assurance-title {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       color: #ffffff;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .footer-payment-tags {
@@ -3638,16 +3660,16 @@
     .pay-tag {
       background: rgba(255, 255, 255, 0.08);
       color: #cbd5e1;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
-      padding: 3px 8px;
+      padding: 2px 7px;
       border-radius: 4px;
     }
 
     /* Bottom Copyright & Legal Strip */
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 24px;
+      padding-top: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -4095,9 +4117,7 @@
       height: 16px;
     }
 
-    /* ==========================================================================
-       MOBILE NAVIGATION DRAWER & TOGGLE STYLES
-       ========================================================================== */
+    /* MOBILE NAVIGATION DRAWER & TOGGLE STYLES */
     .mobile-menu-toggle {
       display: none;
       width: 40px;
@@ -5441,69 +5461,81 @@
         justify-content: center;
       }
 
-      /* Compact, Elegant Mobile Footer (Reduced Height & Balanced Margins) */
+      /* Compact, Elegant Mobile Footer */
       .footer-trust-ribbon {
-        padding: 14px 0;
+        padding: 12px 0;
       }
 
       .footer-trust-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px 10px;
       }
 
       .footer-trust-item {
-        gap: 10px;
+        gap: 8px;
+        align-items: center;
       }
 
       .footer-trust-icon {
-        width: 34px;
-        height: 34px;
-        border-radius: 8px;
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
       }
 
       .footer-trust-icon .icon {
-        width: 17px;
-        height: 17px;
+        width: 15px;
+        height: 15px;
       }
 
       .footer-trust-title {
-        font-size: 12.5px;
+        font-size: 11.5px;
+        font-weight: 700;
+        line-height: 1.2;
       }
 
       .footer-trust-desc {
-        font-size: 11px;
+        font-size: 10px;
+        line-height: 1.25;
       }
 
       .site-footer {
-        padding: 24px 0 calc(20px + env(safe-area-inset-bottom, 0px));
+        padding: 22px 0 calc(18px + env(safe-area-inset-bottom, 0px));
       }
 
       .footer-main-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        margin-bottom: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 12px;
+        margin-bottom: 16px;
+      }
+
+      .footer-col-brand {
+        grid-column: 1 / -1;
       }
 
       .footer-col {
-        gap: 8px;
+        gap: 6px;
       }
 
       .footer-brand-title {
-        font-size: 20px;
+        font-size: 19px;
       }
 
       .footer-bio {
-        font-size: 12px;
+        font-size: 11.5px;
         line-height: 1.45;
       }
 
       .footer-heading {
-        font-size: 13px;
+        font-size: 12px;
         margin-bottom: 2px;
       }
 
       .footer-contact-list {
-        gap: 8px;
+        gap: 6px;
+      }
+
+      .footer-contact-item {
+        font-size: 12px;
       }
 
       .footer-links-list {
@@ -5511,16 +5543,29 @@
       }
 
       .footer-links-list li a {
-        font-size: 12px;
+        font-size: 11.5px;
+        gap: 4px;
+      }
+
+      .footer-col:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-col:last-child .footer-links-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px 12px;
       }
 
       .footer-assurance-box {
-        padding: 10px 12px;
+        padding: 8px 10px;
         margin-top: 6px;
+        border-radius: 8px;
       }
 
       .footer-assurance-title {
-        font-size: 11px;
+        font-size: 10.5px;
+        margin-bottom: 4px;
       }
 
       .footer-payment-tags {
@@ -5529,26 +5574,28 @@
 
       .pay-tag {
         font-size: 9.5px;
-        padding: 2px 7px;
+        padding: 2px 6px;
       }
 
       .footer-bottom {
-        padding-top: 16px;
+        padding-top: 14px;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
         font-size: 11px;
       }
 
       .footer-legal-links {
         width: 100%;
+        justify-content: center;
         gap: 6px;
       }
 
-      .footer-bottom-actions {
-        width: 100%;
-        justify-content: space-between;
-        gap: 8px;
+      .back-to-top-btn {
+        padding: 4px 12px;
+        font-size: 11px;
+        margin-top: 2px;
       }
 
       /* Floating Actions Cluster & Mobile Dock */
@@ -6090,7 +6137,6 @@
       <ul class="mobile-drawer-links">
         <li>
           <a href="#booking-engine" class="mobile-nav-link">
-            <span class="drawer-link-icon">🚕</span>
             <div class="drawer-link-text">
               <span class="drawer-link-name">Book Cab Now</span>
               <span class="drawer-link-badge">0 Advance Payment • Pay After Ride</span>
@@ -6099,7 +6145,6 @@
         </li>
         <li>
           <a href="#calculator" class="mobile-nav-link">
-            <span class="drawer-link-icon">⚡</span>
             <div class="drawer-link-text">
               <span class="drawer-link-name">Live Fare Estimator</span>
               <span class="drawer-link-hint">Instant KM Price Calculator</span>
@@ -6108,7 +6153,6 @@
         </li>
         <li>
           <a href="#fleet" class="mobile-nav-link">
-            <span class="drawer-link-icon">🚗</span>
             <div class="drawer-link-text">
               <span class="drawer-link-name">Commercial Fleet</span>
               <span class="drawer-link-hint">Dzire, Ertiga, Innova, Tempo</span>
@@ -6117,7 +6161,6 @@
         </li>
         <li>
           <a href="#routes" class="mobile-nav-link">
-            <span class="drawer-link-icon">📍</span>
             <div class="drawer-link-text">
               <span class="drawer-link-name">Popular Tour Routes</span>
               <span class="drawer-link-hint">Agra, Jaipur, Rishikesh, Mathura</span>
@@ -6126,7 +6169,6 @@
         </li>
         <li>
           <a href="#tariffs" class="mobile-nav-link">
-            <span class="drawer-link-icon">📋</span>
             <div class="drawer-link-text">
               <span class="drawer-link-name">Tariff Card &amp; Policies</span>
               <span class="drawer-link-hint">Starting @ ₹12/km transparent</span>
@@ -6135,7 +6177,6 @@
         </li>
         <li>
           <a href="#reviews" class="mobile-nav-link">
-            <span class="drawer-link-icon">⭐</span>
             <div class="drawer-link-text">
               <span class="drawer-link-name">Customer Reviews</span>
               <span class="drawer-link-hint">4.9/5 Rating (12,800+ Rides)</span>
@@ -6144,7 +6185,6 @@
         </li>
         <li>
           <a href="#standards" class="mobile-nav-link">
-            <span class="drawer-link-icon">🛡️</span>
             <div class="drawer-link-text">
               <span class="drawer-link-name">Safety Standards</span>
               <span class="drawer-link-hint">7 Highway Guarantees</span>
@@ -6153,7 +6193,6 @@
         </li>
         <li>
           <a href="#faq" class="mobile-nav-link">
-            <span class="drawer-link-icon">❓</span>
             <div class="drawer-link-text">
               <span class="drawer-link-name">Help &amp; FAQs</span>
               <span class="drawer-link-hint">Common travel questions answered</span>
@@ -8709,7 +8748,7 @@
           </div>
           <div>
             <div class="footer-trust-title">100% Commercial Fleet</div>
-            <div class="footer-trust-desc">Yellow tourist plates with speed limiters (80-90 km/h)</div>
+            <div class="footer-trust-desc">Yellow plates &amp; GPS speed limiters</div>
           </div>
         </div>
 
@@ -8723,8 +8762,8 @@
               </svg></span>
           </div>
           <div>
-            <div class="footer-trust-title">Verified Highway Chauffeurs</div>
-            <div class="footer-trust-desc">Police-verified, experienced interstate drivers</div>
+            <div class="footer-trust-title">Verified Highway Drivers</div>
+            <div class="footer-trust-desc">Police-verified, courteous chauffeurs</div>
           </div>
         </div>
 
@@ -8736,8 +8775,8 @@
               </svg></span>
           </div>
           <div>
-            <div class="footer-trust-title">0 Advance Booking Deposit</div>
-            <div class="footer-trust-desc">Inspect cab at doorstep, pay after safe arrival</div>
+            <div class="footer-trust-title">Zero Advance Deposit</div>
+            <div class="footer-trust-desc">Doorstep pickup, pay after arrival</div>
           </div>
         </div>
 
@@ -8751,8 +8790,8 @@
               </svg></span>
           </div>
           <div>
-            <div class="footer-trust-title">Transparent FASTag Tolls</div>
-            <div class="footer-trust-desc">Exact expressway deduction slips shown without markup</div>
+            <div class="footer-trust-title">FASTag Direct Tolls</div>
+            <div class="footer-trust-desc">Exact expressway slips, zero markup</div>
           </div>
         </div>
       </div>
@@ -8763,17 +8802,16 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-main-grid">
-        <!-- Col 1: Corporate Identity & Central Hub -->
-        <div class="footer-col">
+        <!-- Col 1: Corporate Identity & Direct Contact -->
+        <div class="footer-col footer-col-brand">
           <div class="footer-brand-title">
             <img class="footer-brand-logo-img" src="assets/logo.png" alt="Vrinda Cab Logo"
-              style="height: 38px; width: 38px; object-fit: contain; border-radius: 8px; background: #ffffff; padding: 2px;">
+              style="height: 36px; width: 36px; object-fit: contain; border-radius: 8px; background: #ffffff; padding: 2px;">
             <div>Vrinda<span>Cab</span></div>
           </div>
           <p class="footer-bio">
-            Delhi NCR’s premier commercial intercity outstation taxi network. Specializing in reliable, sanitized,
-            chauffeur-driven one-way highway drops, roundtrips and airport transfers across Delhi, Noida, Gurgaon,
-            Ghaziabad, and Faridabad.
+            Delhi NCR’s premier commercial intercity outstation taxi network. Chauffeur-driven one-way drops, roundtrips
+            &amp; airport transfers.
           </p>
 
           <div class="footer-contact-list">
@@ -8782,10 +8820,8 @@
                   <path
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg></span>
-              <div>
-                <span style="font-size: 11px; color: #94a3b8; display: block;">24x7 Central Dispatch Helpline</span>
-                <a class="phone-link" href="tel:+919315675115">+91 93156 75115</a>
-              </div>
+              <a class="phone-link" href="tel:+919315675115">+91 93156 75115 <span
+                  class="footer-badge-mini">24x7</span></a>
             </div>
 
             <div class="footer-contact-item">
@@ -8793,12 +8829,9 @@
                   <path fill="currentColor" stroke="none"
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg></span>
-              <div>
-                <span style="font-size: 11px; color: #94a3b8; display: block;">Instant WhatsApp Booking Desk</span>
-                <a class="whatsapp-link"
-                  href="https://wa.me/919315675115?text=Hello%20Vrinda%20Cab%2C%20I%20want%20to%20inquire%20about%20a%20taxi%20booking."
-                  target="_blank" rel="noopener noreferrer">+91 93156 75115</a>
-              </div>
+              <a class="whatsapp-link"
+                href="https://wa.me/919315675115?text=Hello%20Vrinda%20Cab%2C%20I%20want%20to%20inquire%20about%20a%20taxi%20booking."
+                target="_blank" rel="noopener noreferrer">WhatsApp Booking Desk</a>
             </div>
 
             <div class="footer-contact-item">
@@ -8806,40 +8839,14 @@
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg></span>
-              <div>
-                <span style="font-size: 11px; color: #94a3b8; display: block;">Email Inquiries &amp; GST
-                  Invoicing</span>
-                <a href="mailto:bookings@vrindacab.com">bookings@vrindacab.com</a>
-              </div>
-            </div>
-
-            <div class="footer-contact-item">
-              <span class="icon"><svg viewBox="0 0 24 24">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg></span>
-              <div>
-                <span style="font-size: 11px; color: #94a3b8; display: block;">Central Airport Pickup Hub</span>
-                <span>Near IGI Airport Terminal 3, Mahipalpur Commercial Zone, New Delhi, Delhi 110037</span>
-              </div>
-            </div>
-
-            <div class="footer-contact-item">
-              <span class="icon"><svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg></span>
-              <div>
-                <span style="font-size: 11px; color: #94a3b8; display: block;">Service Availability</span>
-                <span>24x7 Round-The-Clock Dispatch Across Delhi NCR</span>
-              </div>
+              <a href="mailto:bookings@vrindacab.com">bookings@vrindacab.com</a>
             </div>
           </div>
         </div>
 
-        <!-- Col 2: Top Tour Routes -->
+        <!-- Col 2: Top Tour Routes (Top 5 Routes) -->
         <div class="footer-col">
-          <div class="footer-heading">Top Highway Routes</div>
+          <div class="footer-heading">Top Routes</div>
           <ul class="footer-links-list">
             <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
@@ -8849,99 +8856,62 @@
                   </svg></span> Delhi to Jaipur Cab <span class="footer-badge-pill">₹2,799*</span></a></li>
             <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Haridwar &amp; Rishikesh <span class="footer-badge-pill">₹2,499*</span></a>
-            </li>
+                  </svg></span> Delhi to Haridwar <span class="footer-badge-pill">₹2,499*</span></a></li>
             <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Mathura &amp; Vrindavan <span class="footer-badge-pill">₹1,899*</span></a></li>
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Dehradun &amp; Mussoorie <span class="footer-badge-pill">₹2,899*</span></a>
-            </li>
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Chandigarh &amp; Mohali <span class="footer-badge-pill">₹2,999*</span></a></li>
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Shimla &amp; Manali <span class="footer-badge-pill">₹5,499*</span></a></li>
+                  </svg></span> Delhi to Mathura <span class="footer-badge-pill">₹1,899*</span></a></li>
             <li><a href="#booking-engine"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi IGI Airport T1/T2/T3 Transfers <span class="footer-badge-pill">₹899*</span></a>
-            </li>
+                  </svg></span> IGI Airport Transfers <span class="footer-badge-pill">₹899*</span></a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Fleet & Tariff Matrix -->
+        <!-- Col 3: Fleet & Rates (4 Core Classes) -->
         <div class="footer-col">
-          <div class="footer-heading">Fleet &amp; Transparent Rates</div>
+          <div class="footer-heading">Fleet &amp; Rates</div>
           <ul class="footer-links-list">
             <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Maruti Swift Dzire (Sedan, AC) <span class="footer-badge-pill">₹12/km</span></a></li>
+                  </svg></span> Swift Dzire (Sedan) <span class="footer-badge-pill">₹12/km</span></a></li>
             <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Maruti Ertiga (6-Seater SUV) <span class="footer-badge-pill">₹15/km</span></a></li>
+                  </svg></span> Maruti Ertiga (6-Seater) <span class="footer-badge-pill">₹15/km</span></a></li>
             <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Toyota Innova Crysta (Luxury SUV) <span class="footer-badge-pill">₹19/km</span></a></li>
+                  </svg></span> Innova Crysta (SUV) <span class="footer-badge-pill">₹19/km</span></a></li>
             <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Force Tempo Traveller (12-16 Seater) <span class="footer-badge-pill">₹26/km</span></a>
-            </li>
+                  </svg></span> Tempo Traveller <span class="footer-badge-pill">₹26/km</span></a></li>
             <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Standard 250 KM/Day Rule</a></li>
-            <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> All-Inclusive Locked Packages</a></li>
-            <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Corporate GST Tax Invoices</a></li>
-            <li><a href="#standards"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> 0 Advance — Pay Driver After Drop</a></li>
+                  </svg></span> Transparent 250 KM/Day Rule</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Quick Links & Trust Inclusions -->
+        <!-- Col 4: Quick Links & Accepted Payments -->
         <div class="footer-col">
-          <div class="footer-heading">Service Standards</div>
+          <div class="footer-heading">Quick Links</div>
           <ul class="footer-links-list">
             <li><a href="#booking-engine"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Instant Online Cab Booking</a></li>
+                  </svg></span> Online Cab Booking</a></li>
             <li><a href="#calculator"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Live Interactive Fare Calculator</a></li>
-            <li><a href="#standards"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> 7 Highway Safety Guarantees</a></li>
+                  </svg></span> Fare Cost Calculator</a></li>
             <li><a href="#reviews"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Verified Customer Testimonials</a></li>
+                  </svg></span> Customer Reviews</a></li>
             <li><a href="#faq"><span class="icon"><svg viewBox="0 0 24 24">
                     <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Outstation Travel FAQs</a></li>
+                  </svg></span> Outstation FAQs</a></li>
           </ul>
-
-          <div class="footer-assurance-box">
-            <div class="footer-assurance-title">Accepted Payment Modes</div>
-            <div class="footer-payment-tags">
-              <span class="pay-tag">UPI / GPay</span>
-              <span class="pay-tag">PhonePe</span>
-              <span class="pay-tag">Paytm</span>
-              <span class="pay-tag">Net Banking</span>
-              <span class="pay-tag">Debit / Credit Cards</span>
-              <span class="pay-tag">Cash on Drop</span>
-            </div>
-          </div>
         </div>
       </div>
 
       <!-- Footer Bottom Copyright & Legal Strip -->
       <div class="footer-bottom">
         <div class="footer-copyright">
-          &copy; 2026 Vrinda Cab. All Rights Reserved. Delhi NCR Commercial Tourist Transport Network.
+          &copy; 2026 Vrinda Cab. All Rights Reserved.
         </div>
 
         <!-- Compliance & Legal Policies Links -->
@@ -8953,18 +8923,15 @@
           <button type="button" class="footer-policy-trigger" data-policy="cancellation">Cancellation &amp;
             Refund</button>
           <span class="legal-bullet">&bull;</span>
-          <button type="button" class="footer-policy-trigger" data-policy="toll">Toll &amp; State Permit Policy</button>
+          <button type="button" class="footer-policy-trigger" data-policy="toll">Toll Policy</button>
         </div>
 
-        <div class="footer-bottom-actions">
-          <span>Clean Cabs &bull; Verified Chauffeurs &bull; 0 Advance</span>
-          <a class="back-to-top-btn" href="#hero">
-            <span class="icon"><svg viewBox="0 0 24 24">
-                <polyline points="18 15 12 9 6 15" />
-              </svg></span>
-            <span>Back to Top</span>
-          </a>
-        </div>
+        <a class="back-to-top-btn" href="#hero">
+          <span class="icon"><svg viewBox="0 0 24 24">
+              <polyline points="18 15 12 9 6 15" />
+            </svg></span>
+          <span>Back to Top</span>
+        </a>
       </div>
     </div>
   </footer>
