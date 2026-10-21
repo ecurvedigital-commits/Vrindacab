@@ -1391,6 +1391,10 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: clamp(24px, 3vw, 42px);
       align-items: flex-start;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
 
     /* Left: Controls Card */
@@ -1400,6 +1404,10 @@
       border-radius: 16px;
       padding: clamp(20px, 2.5vw, 32px);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      min-width: 0;
+      max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .calc-section-label {
@@ -1410,6 +1418,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px 8px;
     }
 
     .calc-section-label span.hint {
@@ -1856,11 +1866,19 @@
     /* Calc Responsive */
     @media (max-width: 992px) {
       .calc-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .calc-receipt-card {
         position: static;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .calc-route-row {
@@ -4935,21 +4953,60 @@
         font-size: 13.5px;
       }
 
+      .calc-grid {
+        grid-template-columns: 100%;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        gap: 16px;
+      }
+
       .calc-card-controls {
         padding: 16px 14px;
         border-radius: 14px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .calc-section-label {
+        font-size: 12.5px;
+        flex-wrap: wrap;
+        gap: 2px 6px;
+        align-items: baseline;
+        margin-bottom: 8px;
+      }
+
+      .calc-section-label span.hint {
+        font-size: 10.5px;
+        display: block;
       }
 
       .calc-trip-toggle {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 4px;
         padding: 3px;
         margin-bottom: 14px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .calc-trip-btn {
-        font-size: 12px;
-        padding: 8px 6px;
+        font-size: 11.5px;
+        padding: 8px 4px;
         min-height: 38px;
+        min-width: 0;
+        gap: 4px;
+      }
+
+      .calc-trip-btn span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .preset-routes-wrap {
@@ -4961,6 +5018,10 @@
         padding-bottom: 6px;
         margin-bottom: 16px;
         scrollbar-width: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .preset-routes-wrap::-webkit-scrollbar {
@@ -4971,36 +5032,88 @@
         flex-shrink: 0;
         font-size: 11.5px;
         padding: 5px 11px;
+        white-space: nowrap;
       }
 
       .calc-route-row {
         grid-template-columns: 1fr;
         gap: 10px;
         margin-bottom: 14px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      .calc-input-box {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      .calc-input-wrap {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .calc-input-wrap input {
         height: 40px;
         font-size: 13px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .calc-vehicle-grid {
         grid-template-columns: 1fr;
         gap: 8px;
         margin-bottom: 10px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .vehicle-select-card {
         padding: 10px 12px;
         min-height: 48px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        gap: 8px;
+      }
+
+      .v-card-info {
+        min-width: 0;
+        flex: 1;
+        overflow: hidden;
       }
 
       .v-card-name {
-        font-size: 13px;
+        font-size: 12.5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .v-card-meta {
+        font-size: 10.5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .v-card-rate-box {
+        flex-shrink: 0;
       }
 
       .v-card-rate {
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .calc-receipt-card {
@@ -5008,19 +5121,63 @@
         border-radius: 14px;
         margin-top: 14px;
         position: static;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .receipt-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .receipt-badge {
+        font-size: 11px;
+        padding: 3px 8px;
       }
 
       .receipt-route-title {
-        font-size: 15.5px;
+        font-size: 15px;
+        line-height: 1.35;
+        word-break: break-word;
       }
 
-      .receipt-total-fare {
+      .receipt-breakdown {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .breakdown-row {
+        font-size: 12px;
+        gap: 8px;
+      }
+
+      .breakdown-row span:first-child {
+        min-width: 0;
+        overflow-wrap: break-word;
+      }
+
+      .total-price {
         font-size: 24px;
       }
 
-      .calc-whatsapp-btn {
-        height: 46px;
-        font-size: 13.5px;
+      .calc-actions {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .calc-btn-wa,
+      .calc-btn-call {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        text-align: center;
+        padding: 11px 10px;
+        font-size: 12.5px;
       }
 
       /* Tour Routes Section */
@@ -5050,6 +5207,10 @@
         padding-bottom: 6px;
         margin-bottom: 20px;
         scrollbar-width: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
       }
 
       .routes-filter-wrap::-webkit-scrollbar {
