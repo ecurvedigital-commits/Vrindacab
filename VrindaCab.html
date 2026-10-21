@@ -585,6 +585,10 @@
       color: #cffafe;
     }
 
+    .badge-mobile-text {
+      display: none;
+    }
+
     /* Full-Width Canvas/SVG Container */
     .radar-highway-stage {
       position: relative;
@@ -1038,22 +1042,22 @@
 
     .metric-value {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 800;
       color: var(--primary);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
     }
 
     .metric-title {
-      font-size: 15px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--heading);
       margin-bottom: 2px;
     }
 
     .metric-desc {
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--text-muted);
       line-height: 1.45;
     }
@@ -3640,6 +3644,176 @@
       height: 14px;
     }
 
+    /* Footer Legal Links */
+    .footer-legal-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-policy-trigger {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #94a3b8;
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s ease;
+    }
+
+    .footer-policy-trigger:hover {
+      color: #34d399;
+    }
+
+    .legal-bullet {
+      color: #475569;
+      font-size: 11px;
+    }
+
+    .footer-contact-item .icon svg.wa-icon-svg {
+      fill: #34d399 !important;
+      stroke: none !important;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Policy Modals System */
+    .policy-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 14, 10, 0.84);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .policy-modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .policy-modal-card {
+      background: #0b1e17;
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      border-radius: 18px;
+      width: 100%;
+      max-width: 660px;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+      color: #cbd5e1;
+      padding: 24px;
+      position: relative;
+    }
+
+    .policy-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+
+    .policy-modal-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .policy-modal-close {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .policy-modal-close:hover {
+      background: #ef4444;
+      color: #ffffff;
+      border-color: #ef4444;
+    }
+
+    .policy-tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      margin-bottom: 16px;
+      padding-bottom: 4px;
+    }
+
+    .policy-tab-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .policy-tab-btn.active,
+    .policy-tab-btn:hover {
+      background: #0a4d3c;
+      color: #34d399;
+      border-color: rgba(52, 211, 153, 0.4);
+    }
+
+    .policy-content-panel {
+      display: none;
+      font-size: 13px;
+      line-height: 1.65;
+      color: #cbd5e1;
+    }
+
+    .policy-content-panel.active {
+      display: block;
+    }
+
+    .policy-content-panel h4 {
+      color: #ffffff;
+      font-size: 14.5px;
+      margin: 14px 0 6px;
+      font-weight: 700;
+    }
+
+    .policy-content-panel p {
+      margin-bottom: 10px;
+    }
+
+    .policy-content-panel ul {
+      margin-left: 18px;
+      margin-bottom: 12px;
+    }
+
+    .policy-content-panel li {
+      margin-bottom: 5px;
+    }
+
     /* ==========================================================================
        FLOATING ACTIONS CLUSTER (CALL + WHATSAPP AT RIGHT BOTTOM)
        ========================================================================== */
@@ -3699,6 +3873,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .floating-wa-btn .icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Authentic WhatsApp Brand SVG Icon Styles */
+    .floating-wa-btn .icon svg,
+    .mobile-dock-btn.btn-wa-dock .icon svg,
+    .popup-submit-btn .icon svg,
+    svg.wa-icon-svg {
+      width: 100% !important;
+      height: 100% !important;
+      fill: #ffffff !important;
+      stroke: none !important;
     }
 
     .floating-pulse {
@@ -4333,55 +4523,154 @@
         margin-top: 10px;
       }
 
-      /* Live GPS Radar Strip */
+      /* Live GPS Radar Strip - Fully Optimized for Mobile */
       .route-radar-strip {
-        padding: 14px 0 12px;
+        padding: 16px 0 14px;
       }
 
       .radar-strip-header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .radar-live-indicator {
+        font-size: 12px;
+        font-weight: 800;
+        color: #6ee7b7;
       }
 
       .radar-badges-group {
+        display: flex;
+        align-items: center;
         gap: 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+
+      .radar-badges-group::-webkit-scrollbar {
+        display: none;
       }
 
       .radar-badge {
-        font-size: 9.5px;
-        padding: 2px 7px;
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        flex-shrink: 0;
+      }
+
+      .badge-desktop-text {
+        display: none;
+      }
+
+      .badge-mobile-text {
+        display: inline;
+      }
+
+      .radar-mobile-hint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        padding: 5px 12px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        color: #6ee7b7;
+        margin: 2px auto 8px auto;
+        width: fit-content;
+        max-width: 100%;
+        letter-spacing: 0.2px;
+      }
+
+      .radar-mobile-hint .icon {
+        width: 13px;
+        height: 13px;
+        color: #34d399;
       }
 
       .radar-highway-stage {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        margin: 2px 0;
+        scroll-behavior: smooth;
+        margin: 2px 0 10px 0;
+        padding: 10px 4px;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        scrollbar-width: thin;
+        scrollbar-color: rgba(16, 185, 129, 0.4) transparent;
       }
 
       .radar-highway-stage::-webkit-scrollbar {
-        display: none;
+        height: 4px;
+        display: block;
+      }
+
+      .radar-highway-stage::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 999px;
+      }
+
+      .radar-highway-stage::-webkit-scrollbar-thumb {
+        background: rgba(16, 185, 129, 0.45);
+        border-radius: 999px;
       }
 
       .radar-highway-svg {
-        min-width: 620px;
-        height: 105px;
-      }
-
-      .radar-mobile-hint {
-        display: flex;
+        width: 1080px;
+        min-width: 1080px;
+        height: 95px;
+        display: block;
       }
 
       .radar-milestones-ticker {
-        gap: 10px;
-        font-size: 10px;
-        padding-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-top: none;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
         scrollbar-width: none;
       }
 
       .radar-milestones-ticker::-webkit-scrollbar {
         display: none;
+      }
+
+      .radar-milestone-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(52, 211, 153, 0.2);
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-size: 11px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+      }
+
+      .radar-milestone-item span {
+        color: #6ee7b7;
+        font-weight: 700;
+      }
+
+      .ticker-arrow {
+        color: #10b981;
+        opacity: 0.7;
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
       }
 
       /* Trust Metrics Strip */
@@ -4403,20 +4692,23 @@
 
       .metrics-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 12px;
       }
 
       .metric-card {
         padding: 14px 16px;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 6px 12px;
         align-items: center;
-        gap: 12px;
       }
 
       .metric-icon-box {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
         border-radius: 8px;
+        grid-column: 1;
+        grid-row: 1;
       }
 
       .metric-icon-box .icon {
@@ -4424,13 +4716,30 @@
         height: 18px;
       }
 
+      .metric-card>div:not(.metric-icon-box) {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .metric-value {
+        font-size: 20px;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }
+
       .metric-title {
-        font-size: 13.5px;
+        font-size: 12.5px;
+        font-weight: 700;
+        margin-top: 1px;
       }
 
       .metric-desc {
-        font-size: 12px;
-        margin-top: 1px;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        font-size: 11.5px;
+        line-height: 1.45;
+        color: var(--text-muted);
+        margin-top: 2px;
       }
 
       /* Fleet Section */
@@ -4953,9 +5262,22 @@
       }
 
       .footer-bottom {
-        padding-top: 14px;
-        gap: 8px;
+        padding-top: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
         font-size: 11px;
+      }
+
+      .footer-legal-links {
+        width: 100%;
+        gap: 6px;
+      }
+
+      .footer-bottom-actions {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
       }
 
       /* Floating Actions Cluster & Mobile Dock */
@@ -5026,12 +5348,347 @@
         font-size: 14px;
       }
 
+      .metric-value {
+        font-size: 19px;
+      }
+
+      .metric-title {
+        font-size: 12px;
+      }
+
+      .metric-desc {
+        font-size: 11px;
+      }
+
       .mobile-dock-btn {
         font-size: 11.5px;
       }
 
       .mobile-dock-btn span {
         white-space: nowrap;
+      }
+    }
+
+    /* ==========================================================================
+       VISIT POP-UP MODAL: INSTANT FARE QUOTE & PROMO
+       ========================================================================== */
+    .vrinda-popup-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(3, 26, 20, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(12px, 3vw, 24px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+    }
+
+    .vrinda-popup-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .vrinda-popup-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 20px;
+      padding: clamp(22px, 3.5vw, 30px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(10, 77, 60, 0.08);
+      position: relative;
+      transform: scale(0.92) translateY(18px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .vrinda-popup-overlay.active .vrinda-popup-card {
+      transform: scale(1) translateY(0);
+    }
+
+    .vrinda-popup-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      border: none;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .vrinda-popup-close svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+    }
+
+    .vrinda-popup-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      transform: rotate(90deg);
+    }
+
+    .vrinda-popup-header {
+      text-align: center;
+      margin-bottom: 18px;
+      padding-right: 24px;
+    }
+
+    .popup-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #047857;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .popup-pill-tag .icon {
+      width: 14px;
+      height: 14px;
+      color: #f59e0b;
+      fill: #f59e0b;
+      display: inline-flex;
+    }
+
+    .popup-title {
+      font-size: clamp(19px, 3.8vw, 23px);
+      font-weight: 800;
+      color: var(--heading);
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+
+    .popup-subtitle {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .popup-trip-segment {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+
+    .popup-segment-btn {
+      position: relative;
+      text-align: center;
+      padding: 8px 4px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup-segment-btn input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      margin: 0;
+    }
+
+    .popup-segment-btn.active {
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .popup-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .popup-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .popup-form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .popup-form-group label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .popup-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .popup-input-icon {
+      position: absolute;
+      left: 11px;
+      width: 15px;
+      height: 15px;
+      color: #94a3b8;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup-input-icon svg {
+      width: 15px;
+      height: 15px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .popup-input-wrap input,
+    .popup-input-wrap select {
+      width: 100%;
+      padding: 9px 10px 9px 34px;
+      font-size: 13px;
+      color: #1e293b;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 9px;
+      transition: all 0.2s ease;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .popup-input-wrap input:focus,
+    .popup-input-wrap select:focus {
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(10, 77, 60, 0.12);
+    }
+
+    .popup-trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px 12px;
+      padding: 8px 10px;
+      background: #f8fafc;
+      border-radius: 9px;
+      border: 1px dashed #cbd5e1;
+      margin-bottom: 14px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #0f766e;
+    }
+
+    .popup-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #ffffff;
+      border: none;
+      padding: 13px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 11px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .popup-submit-btn .icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      display: inline-flex;
+    }
+
+    .popup-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      filter: brightness(1.04);
+    }
+
+    .popup-submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .popup-foot-cta {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    .popup-foot-cta a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: 3px;
+    }
+
+    .popup-foot-cta a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .popup-form-grid {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .vrinda-popup-card {
+        padding: 18px 14px;
+        border-radius: 16px;
+      }
+
+      .popup-title {
+        font-size: 18px;
+      }
+
+      .popup-trust-row {
+        font-size: 10px;
+        gap: 4px 8px;
       }
     }
   </style>
@@ -5373,6 +6030,7 @@
 
         <!-- Right Quick Booking Engine -->
         <div class="hero-right" id="booking-engine">
+          <div id="booking" style="position:relative;top:-90px;visibility:hidden;"></div>
           <div class="engine-card">
             <div class="engine-card-header">
               <div class="engine-card-title">Book Your Journey</div>
@@ -5545,24 +6203,27 @@
           <div class="radar-badges-group">
             <span class="radar-badge">SPEED: 85 KM/H</span>
             <span class="radar-badge badge-amber">FASTAG: AUTO-CLEARED</span>
-            <span class="radar-badge badge-cyan">FLEET: MARUTI SWIFT DZIRE TOUR (AC SEDAN)</span>
+            <span class="radar-badge badge-cyan">
+              <span class="badge-desktop-text">FLEET: MARUTI SWIFT DZIRE TOUR (AC SEDAN)</span>
+              <span class="badge-mobile-text">FLEET: SWIFT DZIRE (AC)</span>
+            </span>
           </div>
         </div>
 
         <!-- Mobile Swipe Hint -->
         <div class="radar-mobile-hint">
           <span class="icon" style="width: 13px; height: 13px;"><svg viewBox="0 0 24 24">
-              <path d="M14 18l-6-6 6-6" />
+              <polyline points="15 18 9 12 15 6" />
             </svg></span>
-          <span>Swipe highway radar sideways to explore route waypoints</span>
+          <span>Swipe highway radar sideways to track live cab en route</span>
           <span class="icon" style="width: 13px; height: 13px;"><svg viewBox="0 0 24 24">
-              <path d="M10 6l6 6-6 6" />
+              <polyline points="9 18 15 12 9 6" />
             </svg></span>
         </div>
 
         <!-- Panoramic Full-Width Highway Stage (Zero Obstruction) -->
-        <div class="radar-highway-stage">
-          <svg class="radar-highway-svg" viewBox="0 0 1600 120" preserveAspectRatio="none"
+        <div class="radar-highway-stage" id="radarHighwayStage">
+          <svg class="radar-highway-svg" viewBox="0 0 1600 120" preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
               <!-- Volumetric Headlight Beams Gradient -->
@@ -5608,27 +6269,27 @@
               <circle cx="0" cy="0" r="16" stroke="#10b981" stroke-width="2" fill="none" class="pulse-ring" />
               <circle cx="0" cy="0" r="16" stroke="#10b981" stroke-width="2" fill="none" class="pulse-ring-delayed" />
               <circle cx="0" cy="0" r="6" fill="#10b981" />
-              <rect x="-65" y="-38" width="130" height="22" rx="4" fill="rgba(4,20,16,0.92)" stroke="#10b981"
-                stroke-width="1.2" />
-              <text x="0" y="-23" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700"
+              <rect x="-70" y="-39" width="140" height="23" rx="5" fill="rgba(4,20,16,0.92)" stroke="#10b981"
+                stroke-width="1.3" />
+              <text x="0" y="-23.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="700"
                 fill="#a7f3d0" text-anchor="middle">Delhi NCR (Pickup Hub)</text>
             </g>
 
             <!-- Waypoint 2: Yamuna Expressway / Jewar FASTag Toll (560, 64) -->
             <g transform="translate(560, 64)">
               <circle cx="0" cy="0" r="6" fill="#f59e0b" />
-              <rect x="-70" y="-38" width="140" height="22" rx="4" fill="rgba(4,20,16,0.92)" stroke="#f59e0b"
-                stroke-width="1.2" />
-              <text x="0" y="-23" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700"
+              <rect x="-75" y="-39" width="150" height="23" rx="5" fill="rgba(4,20,16,0.92)" stroke="#f59e0b"
+                stroke-width="1.3" />
+              <text x="0" y="-23.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="700"
                 fill="#fde68a" text-anchor="middle">Yamuna Expwy (FASTag)</text>
             </g>
 
             <!-- Waypoint 3: Mathura & Vrindavan (1020, 56) -->
             <g transform="translate(1020, 56)">
               <circle cx="0" cy="0" r="6" fill="#06b6d4" />
-              <rect x="-70" y="-38" width="140" height="22" rx="4" fill="rgba(4,20,16,0.92)" stroke="#06b6d4"
-                stroke-width="1.2" />
-              <text x="0" y="-23" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700"
+              <rect x="-75" y="-39" width="150" height="23" rx="5" fill="rgba(4,20,16,0.92)" stroke="#06b6d4"
+                stroke-width="1.3" />
+              <text x="0" y="-23.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="700"
                 fill="#a5f3fc" text-anchor="middle">Mathura / Vrindavan</text>
             </g>
 
@@ -5636,9 +6297,9 @@
             <g transform="translate(1450, 62)">
               <circle cx="0" cy="0" r="18" stroke="#f59e0b" stroke-width="2" fill="none" class="pulse-ring" />
               <circle cx="0" cy="0" r="6" fill="#f59e0b" />
-              <rect x="-75" y="-38" width="150" height="22" rx="4" fill="rgba(4,20,16,0.92)" stroke="#f59e0b"
-                stroke-width="1.2" />
-              <text x="0" y="-23" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700"
+              <rect x="-80" y="-39" width="160" height="23" rx="5" fill="rgba(4,20,16,0.92)" stroke="#f59e0b"
+                stroke-width="1.3" />
+              <text x="0" y="-23.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="700"
                 fill="#fde68a" text-anchor="middle">Agra Taj (Destination)</text>
             </g>
 
@@ -5665,7 +6326,7 @@
         <!-- Bottom Milestone Ticker -->
         <div class="radar-milestones-ticker">
           <div class="radar-milestone-item">
-            <span>Delhi NCR Hub:</span> IGI Airport T3 / CP (0 km)
+            <span>Delhi NCR:</span> IGI T3 / CP (0 km)
           </div>
           <div class="ticker-arrow"><span class="icon" style="width: 14px; height: 14px; color: #34d399;"><svg
                 viewBox="0 0 24 24">
@@ -5673,7 +6334,7 @@
                 <polyline points="12 5 19 12 12 19" />
               </svg></span></div>
           <div class="radar-milestone-item">
-            <span>Greater Noida Entry:</span> Zero Point (38 km)
+            <span>Gr. Noida:</span> Zero Pt (38 km)
           </div>
           <div class="ticker-arrow"><span class="icon" style="width: 14px; height: 14px; color: #34d399;"><svg
                 viewBox="0 0 24 24">
@@ -5681,7 +6342,7 @@
                 <polyline points="12 5 19 12 12 19" />
               </svg></span></div>
           <div class="radar-milestone-item">
-            <span>Jewar Toll Plaza:</span> FASTag Auto-Lane (68 km)
+            <span>Jewar Toll:</span> FASTag (68 km)
           </div>
           <div class="ticker-arrow"><span class="icon" style="width: 14px; height: 14px; color: #34d399;"><svg
                 viewBox="0 0 24 24">
@@ -5689,7 +6350,7 @@
                 <polyline points="12 5 19 12 12 19" />
               </svg></span></div>
           <div class="radar-milestone-item">
-            <span>Mathura-Vrindavan:</span> Highway Cut (136 km)
+            <span>Mathura:</span> Highway Cut (136 km)
           </div>
           <div class="ticker-arrow"><span class="icon" style="width: 14px; height: 14px; color: #34d399;"><svg
                 viewBox="0 0 24 24">
@@ -5697,7 +6358,7 @@
                 <polyline points="12 5 19 12 12 19" />
               </svg></span></div>
           <div class="radar-milestone-item">
-            <span>Agra Expressway End:</span> Taj Mahal Drop (185 km)
+            <span>Agra Taj:</span> Final Drop (185 km)
           </div>
         </div>
       </div>
@@ -7385,7 +8046,7 @@
                   <div class="reviewer-avatar">MB</div>
                   <div>
                     <div class="reviewer-name">
-                      Meenakshi &amp; Sunil Bansal
+                      Meenakshi Bansal
                       <span class="verified-badge"><span class="icon"><svg viewBox="0 0 24 24">
                             <polyline points="20 6 9 17 4 12" />
                           </svg></span> Verified</span>
@@ -7536,20 +8197,6 @@
             </div>
           </div>
 
-          <!-- Reviews Pagination Indicator -->
-          <div class="reviews-pagination" id="reviewsPagination" aria-label="Customer reviews pagination">
-            <button type="button" class="review-dot active" data-index="0"
-              aria-label="Review 1: Dr. Rajesh Malhotra"></button>
-            <button type="button" class="review-dot" data-index="1"
-              aria-label="Review 2: Vikramaditya and Priya Sen"></button>
-            <button type="button" class="review-dot" data-index="2" aria-label="Review 3: Meenakshi Sundaram"></button>
-            <button type="button" class="review-dot" data-index="3"
-              aria-label="Review 4: Ananya and Amit Bansal"></button>
-            <button type="button" class="review-dot" data-index="4" aria-label="Review 5: Harshavardhan Rao"></button>
-            <button type="button" class="review-dot" data-index="5"
-              aria-label="Review 6: Amitava and Shreya Roy"></button>
-          </div>
-
           <!-- Direct Social Proof CTA Banner Strip -->
           <div class="reviews-cta-strip">
             <div class="reviews-cta-text">
@@ -7584,9 +8231,7 @@
         </div>
       </section>
 
-      <!-- ========================================================================
-         SECTION 9: INTERACTIVE FAQ ACCORDION
-         ======================================================================== -->
+      <!-- SECTION 9: INTERACTIVE FAQ ACCORDION -->
       <section class="faq-section" id="faq">
         <div class="container">
           <!-- Section Header -->
@@ -7714,7 +8359,11 @@
               </button>
               <div class="faq-answer">
                 <div class="faq-answer-inner">
-                  <strong>Strictly yes.</strong> You can select specifically between <strong>Swift Dzire (Sedan), Maruti Ertiga (MPV), Toyota Innova Crysta (Luxury SUV), or Force Tempo Traveller (12-17 Seater)</strong>. Every dispatched cab is a commercially licensed yellow-plate tourist vehicle (All India Tourist Permit - AITP) equipped with full working AC and driven by experienced, background-verified highway chauffeurs.
+                  <strong>Strictly yes.</strong> You can select specifically between <strong>Swift Dzire (Sedan), Maruti
+                    Ertiga (MPV), Toyota Innova Crysta (Luxury SUV), or Force Tempo Traveller (12-17 Seater)</strong>.
+                  Every dispatched cab is a commercially licensed yellow-plate tourist vehicle (All India Tourist Permit
+                  - AITP) equipped with full working AC and driven by experienced, background-verified highway
+                  chauffeurs.
                 </div>
               </div>
             </div>
@@ -7839,8 +8488,7 @@
             Vrinda<span>Cab</span>
           </div>
           <p class="footer-bio">
-            Delhi NCR’s premier commercial intercity taxi network. Specializing in reliable, sanitized, chauffeur-driven
-            outstation cabs and airport transfers across Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.
+            Delhi NCR’s premier commercial intercity outstation taxi network. Specializing in reliable, sanitized, chauffeur-driven one-way highway drops, roundtrips and airport transfers across Delhi, Noida, Gurgaon, Ghaziabad, and Faridabad.
           </p>
 
           <div class="footer-contact-list">
@@ -7856,9 +8504,9 @@
             </div>
 
             <div class="footer-contact-item">
-              <span class="icon"><svg viewBox="0 0 24 24">
-                  <path
-                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              <span class="icon"><svg class="wa-icon-svg" viewBox="0 0 24 24" width="16" height="16" fill="#34d399">
+                  <path fill="currentColor" stroke="none"
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg></span>
               <div>
                 <span style="font-size: 11px; color: #94a3b8; display: block;">Instant WhatsApp Booking Desk</span>
@@ -7870,12 +8518,34 @@
 
             <div class="footer-contact-item">
               <span class="icon"><svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg></span>
+              <div>
+                <span style="font-size: 11px; color: #94a3b8; display: block;">Email Inquiries &amp; GST Invoicing</span>
+                <a href="mailto:bookings@vrindacab.com">bookings@vrindacab.com</a>
+              </div>
+            </div>
+
+            <div class="footer-contact-item">
+              <span class="icon"><svg viewBox="0 0 24 24">
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg></span>
               <div>
-                <span style="font-size: 11px; color: #94a3b8; display: block;">Airport Pickup Hub</span>
-                <span>Near IGI Airport Terminal 3, New Delhi, Delhi 110037</span>
+                <span style="font-size: 11px; color: #94a3b8; display: block;">Central Airport Pickup Hub</span>
+                <span>Near IGI Airport Terminal 3, Mahipalpur Commercial Zone, New Delhi, Delhi 110037</span>
+              </div>
+            </div>
+
+            <div class="footer-contact-item">
+              <span class="icon"><svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg></span>
+              <div>
+                <span style="font-size: 11px; color: #94a3b8; display: block;">Service Availability</span>
+                <span>24x7 Round-The-Clock Dispatch Across Delhi NCR</span>
               </div>
             </div>
           </div>
@@ -7885,29 +8555,14 @@
         <div class="footer-col">
           <div class="footer-heading">Top Highway Routes</div>
           <ul class="footer-links-list">
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Agra Taxi <span class="footer-badge-pill">₹1,999*</span></a></li>
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Jaipur Cab <span class="footer-badge-pill">₹2,799*</span></a></li>
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Haridwar &amp; Rishikesh <span class="footer-badge-pill">₹2,499*</span></a>
-            </li>
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Mathura &amp; Vrindavan <span class="footer-badge-pill">₹1,899*</span></a></li>
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Dehradun &amp; Mussoorie <span class="footer-badge-pill">₹2,899*</span></a>
-            </li>
-            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi to Chandigarh &amp; Mohali <span class="footer-badge-pill">₹2,999*</span></a></li>
-            <li><a href="#booking"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Delhi IGI Airport T1/T2/T3 Transfers</a></li>
+            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Delhi to Agra Taxi <span class="footer-badge-pill">₹1,999*</span></a></li>
+            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Delhi to Jaipur Cab <span class="footer-badge-pill">₹2,799*</span></a></li>
+            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Delhi to Haridwar &amp; Rishikesh <span class="footer-badge-pill">₹2,499*</span></a></li>
+            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Delhi to Mathura &amp; Vrindavan <span class="footer-badge-pill">₹1,899*</span></a></li>
+            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Delhi to Dehradun &amp; Mussoorie <span class="footer-badge-pill">₹2,899*</span></a></li>
+            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Delhi to Chandigarh &amp; Mohali <span class="footer-badge-pill">₹2,999*</span></a></li>
+            <li><a href="#routes"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Delhi to Shimla &amp; Manali <span class="footer-badge-pill">₹5,499*</span></a></li>
+            <li><a href="#booking-engine"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Delhi IGI Airport T1/T2/T3 Transfers <span class="footer-badge-pill">₹899*</span></a></li>
           </ul>
         </div>
 
@@ -7915,27 +8570,14 @@
         <div class="footer-col">
           <div class="footer-heading">Fleet &amp; Transparent Rates</div>
           <ul class="footer-links-list">
-            <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Maruti Swift Dzire <span class="footer-badge-pill">₹12/km</span></a></li>
-            <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Maruti Ertiga 6-Seater <span class="footer-badge-pill">₹15/km</span></a></li>
-            <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Toyota Innova Crysta <span class="footer-badge-pill">₹19/km</span></a></li>
-            <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Force Tempo Traveller <span class="footer-badge-pill">₹26/km</span></a></li>
-            <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Standard 250 KM/Day Rule</a></li>
-            <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> All-Inclusive Locked Packages</a></li>
-            <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Corporate GST Tax Invoices</a></li>
+            <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Maruti Swift Dzire (Sedan, AC) <span class="footer-badge-pill">₹12/km</span></a></li>
+            <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Maruti Ertiga (6-Seater SUV) <span class="footer-badge-pill">₹15/km</span></a></li>
+            <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Toyota Innova Crysta (Luxury SUV) <span class="footer-badge-pill">₹19/km</span></a></li>
+            <li><a href="#fleet"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Force Tempo Traveller (12-16 Seater) <span class="footer-badge-pill">₹26/km</span></a></li>
+            <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Standard 250 KM/Day Rule</a></li>
+            <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> All-Inclusive Locked Packages</a></li>
+            <li><a href="#tariffs"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Corporate GST Tax Invoices</a></li>
+            <li><a href="#standards"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> 0 Advance — Pay Driver After Drop</a></li>
           </ul>
         </div>
 
@@ -7943,21 +8585,11 @@
         <div class="footer-col">
           <div class="footer-heading">Service Standards</div>
           <ul class="footer-links-list">
-            <li><a href="#booking"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Instant Online Cab Booking</a></li>
-            <li><a href="#calculator"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Live Interactive Fare Calculator</a></li>
-            <li><a href="#standards"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> 7 Highway Safety Guarantees</a></li>
-            <li><a href="#reviews"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Verified Customer Testimonials</a></li>
-            <li><a href="#faq"><span class="icon"><svg viewBox="0 0 24 24">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg></span> Outstation Travel FAQs</a></li>
+            <li><a href="#booking-engine"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Instant Online Cab Booking</a></li>
+            <li><a href="#calculator"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Live Interactive Fare Calculator</a></li>
+            <li><a href="#standards"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> 7 Highway Safety Guarantees</a></li>
+            <li><a href="#reviews"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Verified Customer Testimonials</a></li>
+            <li><a href="#faq"><span class="icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg></span> Outstation Travel FAQs</a></li>
           </ul>
 
           <div class="footer-assurance-box">
@@ -7966,18 +8598,31 @@
               <span class="pay-tag">UPI / GPay</span>
               <span class="pay-tag">PhonePe</span>
               <span class="pay-tag">Paytm</span>
-              <span class="pay-tag">Cash on Drop</span>
               <span class="pay-tag">Net Banking</span>
+              <span class="pay-tag">Debit / Credit Cards</span>
+              <span class="pay-tag">Cash on Drop</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Footer Bottom Copyright & Disclaimer -->
+      <!-- Footer Bottom Copyright & Legal Strip -->
       <div class="footer-bottom">
         <div class="footer-copyright">
           &copy; 2026 Vrinda Cab. All Rights Reserved. Delhi NCR Commercial Tourist Transport Network.
         </div>
+
+        <!-- Compliance & Legal Policies Links -->
+        <div class="footer-legal-links">
+          <button type="button" class="footer-policy-trigger" data-policy="privacy">Privacy Policy</button>
+          <span class="legal-bullet">&bull;</span>
+          <button type="button" class="footer-policy-trigger" data-policy="terms">Terms of Service</button>
+          <span class="legal-bullet">&bull;</span>
+          <button type="button" class="footer-policy-trigger" data-policy="cancellation">Cancellation &amp; Refund</button>
+          <span class="legal-bullet">&bull;</span>
+          <button type="button" class="footer-policy-trigger" data-policy="toll">Toll &amp; State Permit Policy</button>
+        </div>
+
         <div class="footer-bottom-actions">
           <span>Clean Cabs &bull; Verified Chauffeurs &bull; 0 Advance</span>
           <a class="back-to-top-btn" href="#hero">
@@ -7990,6 +8635,70 @@
       </div>
     </div>
   </footer>
+
+  <!-- LEGAL POLICIES MODAL (PRIVACY, TERMS, CANCELLATION, TOLL) -->
+  <div class="policy-modal-overlay" id="vrindaPolicyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle">
+    <div class="policy-modal-card">
+      <div class="policy-modal-header">
+        <div class="policy-modal-title" id="policyModalTitle">
+          <span class="icon" style="color: #34d399; width: 20px; height: 20px;">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
+          <span>Vrinda Cab Policies &amp; Terms</span>
+        </div>
+        <button type="button" class="policy-modal-close" id="policyModalClose" aria-label="Close policy dialog">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Policy Switch Tabs -->
+      <div class="policy-tabs" role="tablist">
+        <button type="button" class="policy-tab-btn active" data-tab="privacy">Privacy Policy</button>
+        <button type="button" class="policy-tab-btn" data-tab="terms">Terms of Service</button>
+        <button type="button" class="policy-tab-btn" data-tab="cancellation">Cancellation &amp; Refund</button>
+        <button type="button" class="policy-tab-btn" data-tab="toll">Toll &amp; State Permit</button>
+      </div>
+
+      <!-- Policy Panels -->
+      <div class="policy-content-panel active" id="policy-privacy">
+        <h4>1. Privacy &amp; Passenger Data Protection</h4>
+        <p>At Vrinda Cab, passenger confidentiality and security are paramount. We strictly collect only essential travel details (passenger name, phone number, pickup/drop coordinates, and travel date) solely to facilitate trip dispatch and driver coordination.</p>
+        <h4>2. Zero Third-Party Sharing</h4>
+        <p>Your personal contact numbers and trip itineraries are never sold, rented, or traded with third-party marketing brokers. Your telephone number is disclosed exclusively to your assigned commercial chauffeur 2 hours prior to pickup for vehicle arrival coordination.</p>
+        <h4>3. Communications &amp; Updates</h4>
+        <p>We use WhatsApp and SMS solely for sending dispatch notifications, vehicle registration details, chauffeur verification badges, and formal GST tax invoices.</p>
+      </div>
+
+      <div class="policy-content-panel" id="policy-terms">
+        <h4>1. 0 Advance Booking Assurance</h4>
+        <p>All outstation taxi rides with Vrinda Cab can be booked with 0 advance deposit. You inspect the vehicle and meet your verified chauffeur at your doorstep before embarking on the journey.</p>
+        <h4>2. Kilometer &amp; Duty Calculation</h4>
+        <p>Outstation round-trips operate on a standardized transparent 250 km/calendar day basis. One-way drops are calculated based on point-to-point garage-to-drop routing or agreed flat locked package rates.</p>
+        <h4>3. Night Driver Allowance</h4>
+        <p>For journeys extending between 10:00 PM and 06:00 AM, a nominal driver night allowance of ₹250 to ₹300 applies to support highway safety and chauffeur rest.</p>
+        <h4>4. Commercial Fleet Standard</h4>
+        <p>All vehicles in our network carry yellow commercial tourist transport plates, valid national interstate permits, comprehensive passenger insurance, and factory-certified speed governors (80 km/h).</p>
+      </div>
+
+      <div class="policy-content-panel" id="policy-cancellation">
+        <h4>1. 100% Free Cancellation</h4>
+        <p>Plans change, and we understand. Passengers can cancel or reschedule any outstation cab booking completely free of charge anytime up to 2 hours before the scheduled pickup time.</p>
+        <h4>2. No Locked Advances &amp; Instant Relief</h4>
+        <p>Because Vrinda Cab operates on a 0 Advance Booking model, passengers are never forced to wait 7 to 14 banking days for refund reconciliations. If you cancel, zero funds are held.</p>
+        <h4>3. Flight / Train Delay Protection</h4>
+        <p>For airport and railway transfers, we track live flight and train status. There is zero penalty or cancellation surcharge for delayed flights or trains.</p>
+      </div>
+
+      <div class="policy-content-panel" id="policy-toll">
+        <h4>1. Exact FASTag Deduction Transparency</h4>
+        <p>All highway tolls on Yamuna Expressway, Eastern Peripheral, Delhi-Meerut Expressway, and Delhi-Mumbai Expressway are billed transparently as per actual government FASTag deductions. The driver displays the live SMS/receipt on request.</p>
+        <h4>2. Interstate Border Commercial Permits</h4>
+        <p>When entering neighboring states (Uttar Pradesh, Haryana, Rajasthan, Uttarakhand, Punjab), state entry passenger taxes are settled either at actual border checkposts or pre-included in our all-inclusive locked packages.</p>
+        <h4>3. Parking &amp; Airport Tolls</h4>
+        <p>MCD commercial toll when entering Delhi and airport parking charges (if applicable at multi-level airport terminals) are borne directly at actuals.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Floating Direct Quick Dispatch Actions (Call & WhatsApp at Right Bottom) -->
   <div class="floating-actions-cluster" aria-label="Quick Contact Actions">
@@ -8013,9 +8722,9 @@
       <div class="floating-pulse"></div>
       <span class="floating-btn-tooltip">WhatsApp Booking</span>
       <span class="icon">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        <svg class="wa-icon-svg" viewBox="0 0 24 24" width="30" height="30" fill="#ffffff" aria-hidden="true">
+          <path fill="#ffffff" stroke="none"
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
       </span>
     </a>
@@ -8037,13 +8746,182 @@
         href="https://wa.me/919315675115?text=Hello%20Vrinda%20Cab%2C%20I%20want%20to%20book%20a%20cab." target="_blank"
         rel="noopener noreferrer">
         <span class="icon">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          <svg class="wa-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="#ffffff" aria-hidden="true">
+            <path fill="#ffffff" stroke="none"
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
           </svg>
         </span>
         <span>WhatsApp Book</span>
       </a>
+    </div>
+  </div>
+
+  <!-- VISIT POP-UP MODAL: INSTANT FARE QUOTE & PROMO -->
+  <div class="vrinda-popup-overlay" id="vrindaPopupOverlay" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="popupTitle">
+    <div class="vrinda-popup-card" id="vrindaPopupCard">
+      <!-- Close Button -->
+      <button type="button" class="vrinda-popup-close" id="vrindaPopupClose" aria-label="Close quote popup">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="vrinda-popup-header">
+        <div class="popup-pill-tag">
+          <span class="icon">
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </span>
+          <span>Limited Time • Flat ₹250 Off On First Trip</span>
+        </div>
+        <h3 class="popup-title" id="popupTitle">Get Instant Outstation Fare Quote</h3>
+        <p class="popup-subtitle">Zero advance payment • Pay driver after safe drop • Verified yellow-plate cabs</p>
+      </div>
+
+      <!-- Modal Form -->
+      <form class="vrinda-popup-form" id="vrindaPopupForm">
+        <!-- Trip Type Segment Selector -->
+        <div class="popup-trip-segment" id="popupTripSegment">
+          <label class="popup-segment-btn active">
+            <input type="radio" name="popupTripType" value="One-Way Drop" checked>
+            <span>One-Way</span>
+          </label>
+          <label class="popup-segment-btn">
+            <input type="radio" name="popupTripType" value="Round-Trip">
+            <span>Round-Trip</span>
+          </label>
+          <label class="popup-segment-btn">
+            <input type="radio" name="popupTripType" value="Airport Transfer">
+            <span>Airport Drop</span>
+          </label>
+        </div>
+
+        <!-- Inputs Grid -->
+        <div class="popup-form-grid">
+          <!-- Pickup -->
+          <div class="popup-form-group">
+            <label for="popupPickup">Pickup Location</label>
+            <div class="popup-input-wrap">
+              <span class="popup-input-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="10" r="3" />
+                  <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+                </svg>
+              </span>
+              <input type="text" id="popupPickup" name="pickup" placeholder="e.g. Delhi NCR / Noida / Gurgaon" required>
+            </div>
+          </div>
+
+          <!-- Drop -->
+          <div class="popup-form-group">
+            <label for="popupDrop">Destination City</label>
+            <div class="popup-input-wrap">
+              <span class="popup-input-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <input type="text" id="popupDrop" name="drop" placeholder="e.g. Jaipur, Agra, Dehradun..." required>
+            </div>
+          </div>
+
+          <!-- Travel Date -->
+          <div class="popup-form-group">
+            <label for="popupDate">Travel Date</label>
+            <div class="popup-input-wrap">
+              <span class="popup-input-icon">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </span>
+              <input type="date" id="popupDate" name="date" required>
+            </div>
+          </div>
+
+          <!-- Vehicle Choice -->
+          <div class="popup-form-group">
+            <label for="popupVehicle">Preferred Vehicle</label>
+            <div class="popup-input-wrap">
+              <span class="popup-input-icon">
+                <svg viewBox="0 0 24 24">
+                  <rect x="1" y="3" width="15" height="13" />
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </span>
+              <select id="popupVehicle" name="vehicle">
+                <option value="Swift Dzire Sedan (₹12/km)" selected>Swift Dzire (Sedan @ ₹12/km)</option>
+                <option value="Maruti Ertiga MPV (₹15/km)">Maruti Ertiga (MPV 6-Seater @ ₹15/km)</option>
+                <option value="Toyota Innova Crysta (₹19/km)">Innova Crysta (Luxury SUV @ ₹19/km)</option>
+                <option value="Force Tempo Traveller (₹26/km)">Force Tempo Traveller (12-17 Seater)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Full Name -->
+          <div class="popup-form-group">
+            <label for="popupName">Your Name</label>
+            <div class="popup-input-wrap">
+              <span class="popup-input-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+              <input type="text" id="popupName" name="name" placeholder="Enter your full name" required>
+            </div>
+          </div>
+
+          <!-- WhatsApp Phone -->
+          <div class="popup-form-group">
+            <label for="popupPhone">Mobile / WhatsApp Number</label>
+            <div class="popup-input-wrap">
+              <span class="popup-input-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </span>
+              <input type="tel" id="popupPhone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}"
+                required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Features Strip -->
+        <div class="popup-trust-row">
+          <span>✓ 0 Advance Payment</span>
+          <span>✓ Guaranteed AC</span>
+          <span>✓ Verified Chauffeur</span>
+          <span>✓ 24x7 Helpline</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="popup-submit-btn" id="popupSubmitBtn">
+          <span class="icon">
+            <svg class="wa-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="#ffffff" aria-hidden="true">
+              <path fill="#ffffff" stroke="none"
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </span>
+          <span>Get Instant Quote on WhatsApp</span>
+        </button>
+
+        <div class="popup-foot-cta">
+          <span>Need immediate assistance?</span>
+          <a href="tel:+919315675115" class="phone-link">Call Dispatch Desk: +91 93156 75115</a>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -8502,6 +9380,199 @@
       // Initial check & resize update
       updateControls();
       window.addEventListener("resize", updateControls, { passive: true });
+    })();
+
+    // VISIT POP-UP MODAL LOGIC
+    (function initVisitPopup() {
+      const overlay = document.getElementById("vrindaPopupOverlay");
+      const closeBtn = document.getElementById("vrindaPopupClose");
+      const form = document.getElementById("vrindaPopupForm");
+      const dateInput = document.getElementById("popupDate");
+      const segmentBtns = document.querySelectorAll(".popup-segment-btn");
+      if (!overlay) return;
+
+      // Set default date to tomorrow and min to today
+      if (dateInput) {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.value = tomorrow.toISOString().split("T")[0];
+        dateInput.min = today.toISOString().split("T")[0];
+      }
+
+      function openPopup() {
+        overlay.classList.add("active");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closePopup() {
+        overlay.classList.remove("active");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        try {
+          sessionStorage.setItem("vrinda_popup_dismissed", "true");
+        } catch (err) { }
+      }
+
+      // Automatically trigger popup when user visits the site
+      const alreadyDismissed = (function () {
+        try {
+          return sessionStorage.getItem("vrinda_popup_dismissed") === "true";
+        } catch (e) {
+          return false;
+        }
+      })();
+
+      if (!alreadyDismissed) {
+        // Smooth entrance 1.2s after page load
+        setTimeout(() => {
+          openPopup();
+        }, 1200);
+      }
+
+      if (closeBtn) closeBtn.addEventListener("click", closePopup);
+
+      // Close on backdrop click
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closePopup();
+      });
+
+      // Close on Escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && overlay.classList.contains("active")) {
+          closePopup();
+        }
+      });
+
+      // Trip segment radio buttons toggle
+      segmentBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          segmentBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const radio = btn.querySelector("input[type='radio']");
+          if (radio) radio.checked = true;
+        });
+      });
+
+      // Form submission -> WhatsApp Dispatch
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const tripTypeRadio = form.querySelector("input[name='popupTripType']:checked");
+          const tripType = tripTypeRadio ? tripTypeRadio.value : "One-Way Drop";
+          const pickup = document.getElementById("popupPickup").value.trim();
+          const drop = document.getElementById("popupDrop").value.trim();
+          const date = document.getElementById("popupDate").value;
+          const vehicle = document.getElementById("popupVehicle").value;
+          const name = document.getElementById("popupName").value.trim();
+          const phone = document.getElementById("popupPhone").value.trim();
+
+          const msgLines = [
+            "New Fare Quote Request (Website Pop-up) - Vrinda Cab",
+            `- Passenger Name: ${name}`,
+            `- WhatsApp/Phone: ${phone}`,
+            `- Trip Type: ${tripType}`,
+            `- Preferred Vehicle: ${vehicle}`,
+            `- Pickup Location: ${pickup}`,
+            `- Destination: ${drop}`,
+            `- Travel Date: ${date}`,
+            "- Promo: Flat ₹250 Off Voucher Claimed",
+            "- Terms: 0 Advance Payment (Pay Driver Directly After Drop)"
+          ];
+
+          if (clickId) {
+            msgLines.push(`- Google Ads GCLID: ${clickId}`);
+          }
+
+          if (typeof trackAdConversion === "function") {
+            trackAdConversion("popup_quote_request");
+          }
+
+          const waUrl = `https://wa.me/91${BUSINESS_PHONE}?text=${encodeURIComponent(msgLines.join("\n"))}`;
+          window.open(waUrl, "_blank", "noopener,noreferrer");
+          closePopup();
+        });
+      }
+    })();
+
+    // Auto-center highway radar on mobile so the moving cab is immediately in view
+    (function initRadarMobileCenter() {
+      const stage = document.getElementById("radarHighwayStage");
+      if (stage && window.innerWidth <= 768) {
+        setTimeout(() => {
+          stage.scrollLeft = 220;
+        }, 350);
+      }
+    })();
+
+    // Legal Policy Modal Logic
+    (function initPolicyModal() {
+      const modal = document.getElementById("vrindaPolicyModal");
+      const closeBtn = document.getElementById("policyModalClose");
+      const triggers = document.querySelectorAll(".footer-policy-trigger");
+      const tabBtns = document.querySelectorAll(".policy-tab-btn");
+      const panels = document.querySelectorAll(".policy-content-panel");
+
+      if (!modal) return;
+
+      function openModal(policyKey) {
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        switchTab(policyKey || "privacy");
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      function switchTab(tabKey) {
+        tabBtns.forEach(b => {
+          if (b.dataset.tab === tabKey) {
+            b.classList.add("active");
+          } else {
+            b.classList.remove("active");
+          }
+        });
+
+        panels.forEach(p => {
+          if (p.id === `policy-${tabKey}`) {
+            p.classList.add("active");
+          } else {
+            p.classList.remove("active");
+          }
+        });
+      }
+
+      triggers.forEach(btn => {
+        btn.addEventListener("click", () => {
+          openModal(btn.dataset.policy);
+        });
+      });
+
+      tabBtns.forEach(tab => {
+        tab.addEventListener("click", () => {
+          switchTab(tab.dataset.tab);
+        });
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+      }
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
     })();
   </script>
 </body>
